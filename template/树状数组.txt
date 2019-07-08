@@ -1,0 +1,21 @@
+ //Ê÷×´Êý×é
+ int lowbit(int x){
+ return x&( x);
+ }
+ int c[MAXN];
+ int n;
+ int sum(int i){
+ int s = 0;
+ while(i > 0)
+ {
+ s += c[i];
+ i = lowbit(i);
+ }
+ return s;
+ }
+ void add(int i,int val){
+ while(i <= n){
+ c[i] += val;
+ i += lowbit(i);
+ }
+ }

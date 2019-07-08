@@ -1,0 +1,10 @@
+long long pow_m(long long a,long long n,long long mod)
+//a^b % mod
+{long long ret = 1;
+long long tmp = a%mod;
+while(n)
+{if(n&1)ret = ret*tmp%mod;
+tmp = tmp*tmp%mod
+;n >>= 1;
+}return ret;
+}
